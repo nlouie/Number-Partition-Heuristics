@@ -7,5 +7,7 @@ Due: 4/28/16 7pm
 Description:
 '''
 
+import controller
+
 def repeated_random(A,k):
-    pass
+    s = controller.generate_random_solution(k)

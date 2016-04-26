@@ -14,7 +14,7 @@ import repeated_random
 import simulated_annealing
 
 # dependencies
-import sys, argparse
+import sys, argparse, random
 
 # number of iterations of each heuristic
 k = 25000
@@ -38,10 +38,13 @@ def residue(A,S):
         r += S[i] * A[i]
     return r
 
+
+
 def main(argv):
     pass
 
-
+def generate_random_solution(k):
+    pass
 
 if __name__ == "__main__":
    main(sys.argv[1:])

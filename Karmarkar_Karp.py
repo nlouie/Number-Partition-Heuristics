@@ -10,6 +10,7 @@
 
 import math
 import heapq
+import controller
 
 # INPUT
 test_list = [10, 8, 7, 6, 5]

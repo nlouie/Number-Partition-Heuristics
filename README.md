@@ -17,5 +17,5 @@ Python 3.4
 
 #### Functionality
 `controller.py` runs various heuristics for the *NUMBER PARTITION* problem. 
-The controller runs m = 50 random instances of n = 100 integers using a k = 25000 iterations
+The controller runs `m = 50` random instances of `n = 100` integers using `k = 25000` iterations
 

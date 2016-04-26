@@ -7,5 +7,7 @@ Due: 4/28/16 7pm
 Description:
 '''
 
+import controller
+
 def simulated_annealing(A,k):
     pass
