@@ -6,6 +6,7 @@
 # Description: Solves the number partition problem with the Karmarkar-Karp Algorithm
 # Resources: https://en.wikipedia.org/wiki/Partition_problem
 # https://docs.python.org/3.0/library/heapq.html
+# adapted for HW7 Question 4
 
 import math
 import heapq

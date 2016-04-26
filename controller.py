@@ -13,6 +13,8 @@ import gradient_descent
 import repeated_random
 import simulated_annealing
 
+# dependencies
+import sys, argparse
 
 # number of iterations of each heuristic
 k = 25000
@@ -35,3 +37,11 @@ def residue(A,S):
             return None
         r += S[i] * A[i]
     return r
+
+def main(argv):
+    pass
+
+
+
+if __name__ == "__main__":
+   main(sys.argv[1:])
