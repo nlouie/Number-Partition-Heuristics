@@ -1,6 +1,6 @@
 # File: simulated_annealing.py
 # Course: Boston University CS330 - Algorithms Spring 2016 Assignment 7 Question 4
-# Authors: Nicholas Louie (nlouie@bu.edu), Satoe Sakuma ( ), Pauline Ramirez ( )
+# Authors: Nicholas Louie (nlouie@bu.edu), Satoe Sakuma ( ), Pauline Ramirez (pgr@bu.edu)
 # Created: 4/26/16
 # Due: 4/28/16 7pm
 # Description: Generates an initial random solution S. For each k iterations, considers a random move
