@@ -11,11 +11,11 @@
 
 
 import controller
-
+import random
 
 
 def gradient_descent(A, k):
-    for x in range(K):
+    for x in range(k):
         # Get a random solution
         S = controller.generate_random_solution(A)
         # Get the residue of the solution
