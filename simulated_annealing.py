@@ -48,13 +48,13 @@ def simulated_annealing(A, k):
                 residue_1 = residue_2
                 
         #if abs(residue_2) < abs(residue_1)
-        else
+        else:
             #update smallest_residue here
             smallest_residue = residue_2
-            rand2 = random.uniform(0,1)
+            #rand2 = random.uniform(0,1)
             #switch residue_1 if it is 1-p
-            if rand2 > e_prob(i, residue_2, residue_1):
-                residue_1 = residue_2
+            #if rand2 > e_prob(i, residue_2, residue_1):
+            #    residue_1 = residue_2
             
         
     return smallest_residue
