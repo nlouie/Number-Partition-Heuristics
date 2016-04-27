@@ -35,6 +35,6 @@ def karmarkar_karp(l):
     # the result should be the residue. Switch negative sign back.
     r = heapq.heappop(heap) * -1
 
-    return r
+    return abs(r)
 
 # eof

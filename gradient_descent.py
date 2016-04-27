@@ -32,7 +32,7 @@ def gradient_descent(A, k):
             S[j] *= -1
         r = controller.residue(A, S)
         # Compare the residues
-        if abs(r) < abs(smallest_residue):
+        if r < smallest_residue:
             smallest_residue = r
     return smallest_residue
         

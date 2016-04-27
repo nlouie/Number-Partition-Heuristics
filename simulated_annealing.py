@@ -41,21 +41,22 @@ def simulated_annealing(A, k):
         residue_2 = controller.residue(A, S)
 
         # compare the two residues
-        if abs(residue_2) > abs(residue_1):
+        if residue_2 > residue_1:
             # take the worse residue by e() probability but smallest_residue still keeps track of smallest
             rand1 = random.uniform(0, 1)
-            if rand1 < e_prob(i, residue_1, residue_2):
+            if rand1 < e_prob(x, residue_1, residue_2):
                 residue_1 = residue_2
                 
         #if abs(residue_2) < abs(residue_1)
-        else:
+        #else:
             #update smallest_residue here
-            smallest_residue = residue_2
+            #smallest_residue = residue_2
             # rand2 = random.uniform(0,1)
             # #switch residue_1 if it is 1-p
             # if rand2 > e_prob(i, residue_2, residue_1):
             #     residue_1 = residue_2
-            
+        if residue_2 < smallest_residue:
+            smallest_residue = residue_2
         
     return smallest_residue
 
@@ -64,7 +65,11 @@ def simulated_annealing(A, k):
 
 def e_prob(i, residue_1, residue_2):
     temp = (10**10)*(.8**math.floor(i/300))
-    temp_prob = math.exp(-1 * (residue_2 - residue_1)/temp)
+    print("res1 " + str(residue_1))
+    print("res2 " + str(residue_2))
+    print("whatever", (-1 * (residue_2 - residue_1)/temp))
+    temp_prob = math.exp((-1 * (residue_2 - residue_1)/temp))
+    #temp_prob = 2.718281828459045235360287471352662497757247093699959574966 ** (-1 * (residue_2 - residue_1)/temp)
     return temp_prob
 
 # eof

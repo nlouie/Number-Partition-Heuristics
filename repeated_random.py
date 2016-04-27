@@ -17,7 +17,7 @@ def repeated_random(A, k):
     for i in range(k - 1):
         S = controller.generate_random_solution(len(A))
         r = controller.residue(A, S)
-        if abs(r) < abs(smallest_residue):
+        if r < smallest_residue:
             smallest_residue = r
     return smallest_residue
 

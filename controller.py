@@ -31,7 +31,7 @@ def residue(A, S):
             print("Invalid Solution value")
             return None
         r += S[i] * A[i]
-    return r
+    return abs(r)
 
 
 def generate_random_ints(n):
