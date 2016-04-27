@@ -17,7 +17,7 @@ def simulated_annealing(A, k):
     # Get random solution
     S = controller.generate_random_solution(len(A))
     # Get residue of solution
-    residue_1 = controller.residue(A,S)
+    residue_1 = controller.residue(A, S)
     # keep track of smallest_residue
     smallest_residue = residue_1
 
@@ -47,7 +47,7 @@ def simulated_annealing(A, k):
             if rand1 < e_prob(i, residue_1, residue_2):
                 residue_1 = residue_2
 
-        return smallest_residue
+    return smallest_residue
 
 # calculate eprob
 
