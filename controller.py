@@ -42,10 +42,17 @@ def residue(A, S):
 
 
 def main(argv):
-    pass
+    #create array of 100 random integers from [1,10^12]
+    inst = []
+    for i in range(1,n):
+        inst.append(random.randint(1,10**12))
 
 def generate_random_solution(n):
-    pass
+    #create an array of 100 integers of either -1 or 1
+    x = [-1,1]
+    randSol = []
+    for i in range (1,n):
+        randSol.append(x[random.randint(0,1)])
 
 if __name__ == "__main__":
    main(sys.argv[1:])
