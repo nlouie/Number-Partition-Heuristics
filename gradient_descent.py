@@ -9,22 +9,22 @@
 # The random move defined for gradient descent is as follows: choose random i and j from [1,n] s.t. i != j
 # Set S_i to -S_i and with probability 1/2 set S_j to -S_j
 
-import controller
 import random
 
 
 def gradient_descent(A, k):
+    import controller
     # Get a random solution
-    S = controller.generate_random_solution(A)
+    S = controller.generate_random_solution(len(A))
     # Get the residue of the solution
     smallest_residue = controller.residue(A, S)
     for x in range(k):
         # Choose an i and j
-        i = random.randint(0, len(S))
-        j = random.randint(0, len(S))
+        i = random.randint(0, len(S) - 1)
+        j = random.randint(0, len(S) - 1)
         # Make sure they're not the same
         while i == j:
-            j = random.randint(0, len(S))
+            j = random.randint(0, len(S) - 1)
         S[i] *= -1
         # Probability of 1/2 to set A[j] to -A[j]
         rand = random.random()

@@ -7,10 +7,11 @@
 # and returns the one with the smallest residue
 
 
-import controller
+
 
 
 def repeated_random(A, k):
+    import controller
     S = controller.generate_random_solution(len(A))
     smallest_residue = controller.residue(A, S)
     for i in range(k - 1):
