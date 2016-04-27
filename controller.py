@@ -57,6 +57,7 @@ def generate_random_solution(n):
     rand_sol = []
     for i in range (1, n):
         rand_sol.append(x[random.randint(0, 1)])
+    return rand_sol
 
 if __name__ == "__main__":
    main(sys.argv[1:])
