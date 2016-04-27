@@ -42,10 +42,10 @@ def simulated_annealing(A, k):
 
         # compare the two residues
         if abs(residue_2) > abs(residue_1):
-            # take the worse residue by e() probability
+            # take the worse residue by e() probability but smallest_residue still keeps track of smallest
             rand1 = random.uniform(0, 1)
             if rand1 < e_prob(i, residue_1, residue_2):
-                smallest_residue = residue_2
+                residue_1 = residue_2
 
         return smallest_residue
 
