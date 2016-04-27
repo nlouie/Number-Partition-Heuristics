@@ -3,15 +3,12 @@
 ### 4/26/16
 
 #### Running the package
-------------------------------
 `python3 controller.py`
 
 #### Dependencies
-------------------------------
 Python 3.4
 
 #### Package Contents
-------------------------------
 - controller.py
 - gradient_descent.py
 - Karmarkar_Karp.py
@@ -19,21 +16,19 @@ Python 3.4
 - simulated_annealing.py
 
 #### Functionality
-------------------------------
 `controller.py` runs various heuristics for the *NUMBER PARTITION* problem. 
 The controller runs `m = 50` random instances of `n = 100` integers using `k = 25000` iterations
 
 #### Results
-------------------------------
 #####Average Exec Times
 - Karmarkar Karp Avg Exec Time: `0.000459990501404`
 - Repeated Random Avg Exec Time: `5.07450001717`
 - Gradient Descent Avg Exec Time: `1.9392400074`
 - Simulated Annealing Avg Exec Time: `1.06476000786`
 #####Average Residues
--Karmarkar Karp Avg Residue: `230107`
--Repeated Random Avg Residue: `235445680`
--Gradient Descent Avg Residue: `233291618`
--Simulated Annealing Residue: `350839537`
+- Karmarkar Karp Avg Residue: `230107`
+- Repeated Random Avg Residue: `235445680`
+- Gradient Descent Avg Residue: `233291618`
+- Simulated Annealing Residue: `350839537`
 
 ######Total Execution Time: 403.976000071
