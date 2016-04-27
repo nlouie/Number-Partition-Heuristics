@@ -12,7 +12,7 @@ import controller
 
 def repeated_random(A, k):
     S = controller.generate_random_solution(len(A))
-    smallest_residue = controller.residue(A,S)
+    smallest_residue = controller.residue(A, S)
     for i in range(k - 1):
         S = controller.generate_random_solution(len(A))
         r = controller.residue(A, S)
