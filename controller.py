@@ -13,14 +13,8 @@ import repeated_random
 import simulated_annealing
 
 # dependencies
-import sys, argparse, random
-
-# number of iterations of each heuristic
-k = 25000
-# number of integers chosen uniformly from [1,10^12]
-n = 100
-# number of test cases
-m = 50
+import random
+import sys
 
 # takes a list of numbers A and a solution set S and returns
 # the residue of A given the solution set.
@@ -33,15 +27,11 @@ def residue(A, S):
         return None
     r = 0
     for i in range(len(A)):
-        if A[i] != -1 or A[i] != 1:
+        if not (A[i] != -1 or A[i] != 1):
             print("Invalid Solution value")
             return None
         r += S[i] * A[i]
     return r
-
-
-def main(argv):
-    pass
 
 
 def generate_random_ints(n):
@@ -49,18 +39,35 @@ def generate_random_ints(n):
     inst = []
     for i in range(1,n):
         inst.append(random.randint(1, pow(10, 12)))
+    return inst
 
 
 def generate_random_solution(n):
     # create an array of 100 integers of either -1 or 1
-    x = [-1,1]
+    x = [-1, 1]
     rand_sol = []
     for i in range(n):
         rand_sol.append(x[random.randint(0, 1)])
     return rand_sol
 
-if __name__ == "__main__":
-   main(sys.argv[1:])
 
+def main():
+    # number of iterations of each heuristic
+    k = 25000
+    # number of integers chosen uniformly from [1,10^12]
+    n = 100
+    # number of test cases
+    m = 50
+
+    # for each number of test cases
+    for i in range(m):
+        A = generate_random_ints(n)
+
+        for j in range(k):
+            print(Karmarkar_Karp.karmarkar_karp(A))
+
+        repeated_random.repeated_random(A, k)
+        gradient_descent.gradient_descent(A, k)
+        simulated_annealing.simulated_annealing(A, k)
 
 # eof
