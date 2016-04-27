@@ -15,6 +15,7 @@ import simulated_annealing
 # dependencies
 import random
 import sys
+import time
 
 # takes a list of numbers A and a solution set S and returns
 # the residue of A given the solution set.
@@ -59,15 +60,53 @@ def main():
     # number of test cases
     m = 50
 
-    # for each number of test cases
-    for i in range(m):
-        A = generate_random_ints(n)
+    # write errthang to output file
+    with open('output.txt', 'w') as f:
+        # for each number of test cases
+        f.write("Running controller.py...\nk = " + str(k) + ", n = " + str(n) + ", m = " + str(m))
+        for i in range(m):
+            A = generate_random_ints(n)
+            f.write("---------------------- Test case " + i + "--------------------" +
+                    "A = " + ''.join(str(e) for e in A) + "\n**Statistics**\n")
 
-        for j in range(k):
-            print(Karmarkar_Karp.karmarkar_karp(A))
+            # Kamarkar Karp
 
-        repeated_random.repeated_random(A, k)
-        gradient_descent.gradient_descent(A, k)
-        simulated_annealing.simulated_annealing(A, k)
+            kk_start_time = time.time()
+            kk_out = Karmarkar_Karp.karmarkar_karp(A)
+            kk_end_time = time.time()
+            kk_exec_time = kk_end_time - kk_start_time
+            f.write("Karmarkar Karp Residue: " + str(kk_out) +
+                    "\nKarmarkar Karp Exec Time: " + kk_exec_time + "\n")
+
+            # Repeated Random
+
+            rr_start_time = time.time()
+            rr_out = repeated_random.repeated_random(A, k)
+            rr_end_time = time.time()
+            rr_exec_time = rr_end_time - rr_start_time
+            f.write("Repeated Random Residue: " + str(rr_out) +
+                    "\nRepeated Random Exec Time: " + rr_exec_time + "\n")
+
+            # Gradient Descent
+
+            gd_start_time = time.time()
+            gd_out_a = gradient_descent.gradient_descent(A, k)
+            gd_out = ''.join(str(e) for e in gd_out_a)
+            gd_end_time = time.time()
+            gd_exec_time = gd_end_time - gd_start_time
+            f.write("Gradient Descent Solution: " + str(gd_out) +
+                    "\nGradient Descent Exec Time: " + gd_exec_time + "\n")
+
+            # Simulated Annealing
+
+            sa_start_time = time.time()
+            sa_out_a = simulated_annealing.simulated_annealing(A, k)
+            sa_out = ''.join(str(e) for e in sa_out_a)
+            sa_end_time = time.time()
+            sa_exec_time = sa_end_time - sa_start_time
+            f.write("Simulated Annealing Solution: " + str(sa_out) +
+                    "\nSimulated Annealing Exec Time: " + sa_exec_time + "\n")
+
+            f.write("--------------------- End Test case " + i + "-------------------------")
 
 # eof

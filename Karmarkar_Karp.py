@@ -18,6 +18,7 @@ test_list = [10, 8, 7, 6, 5]
 
 # partition takes a list of integers and performs KK number partitioning algorithm
 
+
 def karmarkar_karp(l):
     n = len(l)
     K = sum(l)
@@ -32,12 +33,12 @@ def karmarkar_karp(l):
         i = heapq.heappop(heap)
         j = heapq.heappop(heap)
         heapq.heappush(heap, abs(i - j) * -1)
+
     # the result should be the residue. Switch negative sign back.
-    return heapq.heappop(heap) * -1
+    r = heapq.heappop(heap) * -1
 
-# run example
-
-# print("Running example list:", test_list)
-# print(karmarkar_karp(test_list))
+    with open('karmarkar_out','w') as f:
+        f.write(r)
+    return r
 
 # eof
