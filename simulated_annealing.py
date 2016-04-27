@@ -64,7 +64,7 @@ def simulated_annealing(A, k):
 
 def e_prob(i, residue_1, residue_2):
     temp = (10**10)*(.8**math.floor(i/300))
-    temp_prob = math.exp(-1 * math.floor(residue_2 - residue_1)/temp)
+    temp_prob = math.exp(-1 * (residue_2 - residue_1)/temp)
     return temp_prob
 
 # eof
