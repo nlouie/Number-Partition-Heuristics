@@ -1,6 +1,6 @@
 # File: gradient_descent.py
 # Course: Boston University CS330 - Algorithms Spring 2016 Assignment 7 Question 4
-# Authors: Nicholas Louie (nlouie@bu.edu), Satoe Sakuma ( ), Pauline Ramirez ( )
+# Authors: Nicholas Louie (nlouie@bu.edu), Satoe Sakuma ( ), Pauline Ramirez (pgr@bu.edu)
 # Created: 4/26/16
 # Due: 4/28/16 7pm
 # Description: Generates an initial random solution S. For each k iterations, considers a random move
@@ -13,7 +13,23 @@
 import controller
 
 
+
 def gradient_descent(A, k):
-    pass
+    for x in range(K):
+        # Choose an i and j
+        i = random.randint(0, len(A))
+        j = random.randint(0, len(A))
+        # Make sure they're not the same
+        while (i == j):
+            j = random.randint(0, len(A))
+        A[i] = -1 * A[i]
+        # Probability of 1/2 to set A[j] to -A[j]
+        rand = random.random()
+        if rand > 0.5:
+            A[j] = -1 * A[j]
+        else:
+            pass
+        
+        
 
 # eof
