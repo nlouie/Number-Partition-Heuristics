@@ -1,6 +1,6 @@
 # File: simulated_annealing.py
 # Course: Boston University CS330 - Algorithms Spring 2016 Assignment 7 Question 4
-# Authors: Nicholas Louie (nlouie@bu.edu), Satoe Sakuma ( ), Pauline Ramirez (pgr@bu.edu)
+# Authors: Nicholas Louie (nlouie@bu.edu), Satoe Sakuma (ssakuma@bu.edu), Pauline Ramirez ( )
 # Created: 4/26/16
 # Due: 4/28/16 7pm
 # Description: Generates an initial random solution S. For each k iterations, considers a random move
@@ -12,6 +12,31 @@ import controller
 
 
 def simulated_annealing(A, k):
-    pass
+	#Get random solution
+	S = controller.generate_random_solution(len(A))
+	#Get residue of solution
+	smallest_residue = controller.residue(A,S)
+    for x in range(k):
+    	i = randint(0,n)
+    	j = randint(0,n)
+
+    	#make sure i and j are different
+    	while i == j:
+    		j = randint(0,n)
+    		if i != j:
+    			break
+
+    	S[i] = -1 * S[i]
+
+    	#change with probability half
+    	prob = random.uniform(0,1)
+    	if prob > 0.5:
+    		S[j] = -1 * S[j]
+
+    	residue_2 = controller.residue(A,S)
+
+    	#compare the two residues
+    	if abs(residue_2) < abs(smallest_residue):
+
 
 # eof

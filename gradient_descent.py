@@ -11,25 +11,33 @@
 
 
 import controller
-
+import random
 
 
 def gradient_descent(A, k):
-    for x in range(K):
+    # Get a random solution
+    S = controller.generate_random_solution(A)
+    # Get the residue of the solution
+    smallest_residue = controller.residue(A, S)
+    
+    for x in range(k):        
         # Choose an i and j
-        i = random.randint(0, len(A))
-        j = random.randint(0, len(A))
+        i = random.randint(0, len(S))
+        j = random.randint(0, len(S))
         # Make sure they're not the same
         while (i == j):
-            j = random.randint(0, len(A))
-        A[i] = -1 * A[i]
+            j = random.randint(0, len(S))
+        S[i] = -1 * S[i]
         # Probability of 1/2 to set A[j] to -A[j]
         rand = random.random()
         if rand > 0.5:
-            A[j] = -1 * A[j]
-        else:
-            pass
-        
+            S[j] = -1 * S[j]
+        r = controller.residue(A, S)
+
+        # Compare the residues
+        if abs(r) < abs(smallest_residue):
+            smallest_residue = r
+    return smallest_residue
         
 
 # eof
