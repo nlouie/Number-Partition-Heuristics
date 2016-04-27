@@ -55,7 +55,7 @@ def simulated_annealing(A, k):
         if residue_2 < smallest_residue:
             smallest_residue = residue_2
         
-    return smallest_residue
+    return S, smallest_residue
 
 # calculate eprob
 

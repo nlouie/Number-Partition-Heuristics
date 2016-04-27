@@ -40,7 +40,7 @@ def gradient_descent(A, k):
         # keep track of smallest
         if r2 < smallest_residue:
             smallest_residue = r2
-    return smallest_residue
+    return S, smallest_residue
         
 
 # eof
