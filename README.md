@@ -25,6 +25,7 @@ The controller runs `m = 50` random instances of `n = 100` integers using `k = 2
 - Repeated Random Avg Exec Time: `5.07450001717`
 - Gradient Descent Avg Exec Time: `1.9392400074`
 - Simulated Annealing Avg Exec Time: `1.06476000786`
+
 #####Average Residues
 - Karmarkar Karp Avg Residue: `230107`
 - Repeated Random Avg Residue: `235445680`
