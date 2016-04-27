@@ -22,12 +22,12 @@ def simulated_annealing(A, k):
     smallest_residue = residue_1
 
     for x in range(k):
-        i = random.randint(0, len(S))
-        j = random.randint(0, len(S))
+        i = random.randint(0, len(S)-1)
+        j = random.randint(0, len(S)-1)
 
         # make sure i and j are different
         while i == j:
-            j = random.randint(0, len(S))
+            j = random.randint(0, len(S)-1)
             if i != j:
                 break
 
