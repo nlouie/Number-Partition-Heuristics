@@ -9,34 +9,48 @@
 # Returns the smallest residue seen over all iterations
 
 import controller
+import random
 
 
 def simulated_annealing(A, k):
 	#Get random solution
 	S = controller.generate_random_solution(len(A))
 	#Get residue of solution
-	smallest_residue = controller.residue(A,S)
+	residue_1 = controller.residue(A,S)
+	#keep track of smallest_residue
+	smallest_residue = residue_1
+
     for x in range(k):
-    	i = randint(0,n)
-    	j = randint(0,n)
+    	i = randint(0,len(S))
+    	j = randint(0,len(S))
 
     	#make sure i and j are different
     	while i == j:
-    		j = randint(0,n)
+    		j = randint(0,len(S))
     		if i != j:
     			break
 
     	S[i] = -1 * S[i]
 
     	#change with probability half
-    	prob = random.uniform(0,1)
-    	if prob > 0.5:
+    	rand = random.uniform(0,1)
+    	if rand > 0.5:
     		S[j] = -1 * S[j]
 
     	residue_2 = controller.residue(A,S)
 
     	#compare the two residues
-    	if abs(residue_2) < abs(smallest_residue):
+    	if abs(residue_2) > abs(residue_1):
+    		#take the worse residue by e() probability
+    		rand1 = random.uniform(0,1)
+    		if rand1 < eprob(i, residue_1, residue_2):
+    			residue_1 = residue_2
 
+    	return smallest_residue
 
+#calculate eprob
+def eprob(i, residue_1, residue_2):
+	temp = 10**10(.8)**(i/300)
+	temp_prob = e**-((residue_2 - residue_1)/temp)
+	return temp_prob
 # eof
