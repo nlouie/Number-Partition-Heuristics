@@ -36,5 +36,5 @@ def karmarkar_karp(l):
 
 # run example
 
-print("Running example list:", test_list)
-print(karmarkar_karp(test_list))
+# print("Running example list:", test_list)
+# print(karmarkar_karp(test_list))

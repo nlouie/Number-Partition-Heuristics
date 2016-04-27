@@ -1,11 +1,10 @@
-'''
-File: controller.py
-Course: Boston Univerisity CS330 - Algorithms Spring 2016 Assignment 7 Question 4
-Authors: Nicholas Louie (nlouie@bu.edu), Satoe Sakuma ( ), Pauline Ramirez ( )
-Created: 4/26/16
-Due: 4/28/16 7pm
-Description: controller.py controls the entire process of question 4.
-'''
+# File: controller.py
+# Course: Boston Univerisity CS330 - Algorithms Spring 2016 Assignment 7 Question 4
+# Authors: Nicholas Louie (nlouie@bu.edu), Satoe Sakuma ( ), Pauline Ramirez ( )
+# Created: 4/26/16
+# Due: 4/28/16 7pm
+# Description: controller.py controls the entire process of question 4.
+
 
 # import each heuristic algorithm
 import Karmarkar_Karp
@@ -43,7 +42,7 @@ def residue(A,S):
 def main(argv):
     pass
 
-def generate_random_solution(k):
+def generate_random_solution(n):
     pass
 
 if __name__ == "__main__":
