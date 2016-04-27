@@ -9,6 +9,7 @@
 # Returns the smallest residue seen over all iterations
 
 import controller
+import random
 
 
 def simulated_annealing(A, k):
