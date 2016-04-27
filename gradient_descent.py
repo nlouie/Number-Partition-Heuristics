@@ -15,12 +15,12 @@ import random
 
 
 def gradient_descent(A, k):
-    for x in range(k):
-        # Get a random solution
-        S = controller.generate_random_solution(A)
-        # Get the residue of the solution
-        smallest_residue = controller.residue(A, S)
-        
+    # Get a random solution
+    S = controller.generate_random_solution(A)
+    # Get the residue of the solution
+    smallest_residue = controller.residue(A, S)
+    
+    for x in range(k):        
         # Choose an i and j
         i = random.randint(0, len(S))
         j = random.randint(0, len(S))
