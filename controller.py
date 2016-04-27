@@ -55,7 +55,7 @@ def generate_random_solution(n):
     # create an array of 100 integers of either -1 or 1
     x = [-1,1]
     rand_sol = []
-    for i in range (1, n):
+    for i in range(n):
         rand_sol.append(x[random.randint(0, 1)])
     return rand_sol
 
