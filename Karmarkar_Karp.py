@@ -6,7 +6,8 @@
 # Description: Solves the number partition problem with the Karmarkar-Karp Algorithm
 # Resources: https://en.wikipedia.org/wiki/Partition_problem
 # https://docs.python.org/3.0/library/heapq.html
-# adapted for HW7 Question 4
+# Adapted for HW7 Question 4 - Nicholas Louie, Satoe Sakuma, Pauline Ramirez
+# 4/26/16
 
 import math
 import heapq
@@ -38,3 +39,5 @@ def karmarkar_karp(l):
 
 # print("Running example list:", test_list)
 # print(karmarkar_karp(test_list))
+
+# eof

@@ -3,7 +3,8 @@
 # Authors: Nicholas Louie (nlouie@bu.edu), Satoe Sakuma ( ), Pauline Ramirez ( )
 # Created: 4/26/16
 # Due: 4/28/16 7pm
-# Description:
+# Description: Generates k random solutions to the number partition problem
+# and returns the one with the smallest residue
 
 
 import controller
