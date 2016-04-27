@@ -71,6 +71,8 @@ def main():
     gd_residues = []
     sa_residues = []
 
+    controller_start_time = time.time()
+
     # write errthang to output file
     with open('output.txt', 'w') as f:
         # for each number of test cases
@@ -129,7 +131,10 @@ def main():
 
             f.write("--------------------- End Test case " + str(i) + "-----------------------\n")
 
-        # Comupute and print Total Stats
+        controller_end_time = time.time()
+        controller_exec_time = controller_end_time - controller_start_time
+
+        # Compute and print Total Stats
 
         kk_avg_exec_time = sum(kk_exec_times) / m
         rr_avg_exec_time = sum(rr_exec_times) / m
@@ -152,6 +157,8 @@ def main():
                 "\nGradient Descent Avg Residue: " + str(gd_avg_residue) +
                 "\nSimulated Annealing Residue: " + str(sa_avg_residue)
                 )
+
+        f.write("\n Total Execution Time: " + str(controller_exec_time))
 
 main()
 
