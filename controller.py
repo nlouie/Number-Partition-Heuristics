@@ -53,7 +53,7 @@ def generate_random_solution(n):
 
 def main():
     # number of iterations of each heuristic
-    k = 100
+    k = 25000
     # number of integers chosen uniformly from [1,10^12]
     n = 100
     # number of test cases

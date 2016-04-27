@@ -19,21 +19,27 @@ def gradient_descent(A, k):
     # Get the residue of the solution
     smallest_residue = controller.residue(A, S)
     for x in range(k):
+        sTemp = S
         # Choose an i and j
         i = random.randint(0, len(S) - 1)
         j = random.randint(0, len(S) - 1)
         # Make sure they're not the same
         while i == j:
             j = random.randint(0, len(S) - 1)
-        S[i] *= -1
+        sTemp[i] *= -1
         # Probability of 1/2 to set A[j] to -A[j]
         rand = random.random()
         if rand > 0.5:
-            S[j] *= -1
-        r = controller.residue(A, S)
+            sTemp[j] *= -1
+        r1 = controller.residue(A, S)
+        r2 = controller.residue(A, sTemp)
         # Compare the residues
-        if r < smallest_residue:
-            smallest_residue = r
+        if r2 < r1:
+            # set new state
+            S = sTemp
+        # keep track of smallest
+        if r2 < smallest_residue:
+            smallest_residue = r2
     return smallest_residue
         
 
