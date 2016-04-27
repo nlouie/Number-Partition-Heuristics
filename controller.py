@@ -1,6 +1,6 @@
 # File: controller.py
 # Course: Boston University CS330 - Algorithms Spring 2016 Assignment 7 Question 4
-# Authors: Nicholas Louie (nlouie@bu.edu), Satoe Sakuma ( ), Pauline Ramirez (pgr@bu.edu)
+# Authors: Nicholas Louie (nlouie@bu.edu), Satoe Sakuma (ssakuma@bu.edu), Pauline Ramirez (pgr@bu.edu)
 # Created: 4/26/16
 # Due: 4/28/16 7pm
 # Description: controller.py controls the entire process of question 4.
@@ -10,11 +10,10 @@
 import Karmarkar_Karp
 import gradient_descent
 import repeated_random
-import simulated_annealing
+#import simulated_annealing
 
 # dependencies
 import random
-import sys
 import time
 
 # takes a list of numbers A and a solution set S and returns

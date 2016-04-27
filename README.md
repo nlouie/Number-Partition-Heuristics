@@ -1,5 +1,5 @@
 #  Boston Univerisity CS330 - Algorithms Spring 2016 Assignment 7 Question 4
-### Nicholas Louie (nlouie@bu.edu), Satoe Sakuma ( ), Pauline Ramirez (pgr@bu.edu) 
+### Nicholas Louie (nlouie@bu.edu), Satoe Sakuma (ssakuma@bu.edu), Pauline Ramirez (pgr@bu.edu) 
 ### 4/26/16
 
 #### Running the package

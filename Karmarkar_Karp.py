@@ -9,9 +9,7 @@
 # Adapted for HW7 Question 4 - Nicholas Louie, Satoe Sakuma, Pauline Ramirez
 # 4/26/16
 
-import math
 import heapq
-import controller
 
 # INPUT
 test_list = [10, 8, 7, 6, 5]
@@ -37,8 +35,6 @@ def karmarkar_karp(l):
     # the result should be the residue. Switch negative sign back.
     r = heapq.heappop(heap) * -1
 
-    with open('karmarkar_out','w') as f:
-        f.write(r)
     return r
 
 # eof
