@@ -12,7 +12,10 @@ import controller
 
 
 def simulated_annealing(A, k):
-	smallest_res = 100
+	#Get random solution
+	S = controller.generate_random_solution(len(A))
+	#Get residue of solution
+	smallest_residue = controller.residue(A,S)
     for x in range(k):
     	i = randint(0,n)
     	j = randint(0,n)
@@ -23,21 +26,17 @@ def simulated_annealing(A, k):
     		if i != j:
     			break
 
-    	res_S1 = residue(A,S)
-
-    	A[i] = -A[i]
+    	S[i] = -1 * S[i]
 
     	#change with probability half
     	prob = random.uniform(0,1)
-    	if prob > .5:
-    		A[j] = -A[j]
+    	if prob > 0.5:
+    		S[j] = -1 * S[j]
 
-    	res_S2 = residue(A,S)
+    	residue_2 = controller.residue(A,S)
 
     	#compare the two residues
-    	#take the smaller one with the e(fuck) probs
-
-
+    	if abs(residue_2) < abs(smallest_residue):
 
 
 # eof
