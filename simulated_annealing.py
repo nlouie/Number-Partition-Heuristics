@@ -11,13 +11,14 @@
 import random
 import math
 
+
 def simulated_annealing(A, k):
     import controller
-    #Get random solution
+    # Get random solution
     S = controller.generate_random_solution(len(A))
-    #Get residue of solution
+    # Get residue of solution
     residue_1 = controller.residue(A,S)
-    #keep track of smallest_residue
+    # keep track of smallest_residue
     smallest_residue = residue_1
 
     for x in range(k):
@@ -26,16 +27,16 @@ def simulated_annealing(A, k):
 
         # make sure i and j are different
         while i == j:
-            j = randint(0, len(S))
+            j = random.randint(0, len(S))
             if i != j:
                 break
 
-        S[i] = -1 * S[i]
+        S[i] *= -1
 
         # change with probability half
         rand = random.uniform(0, 1)
         if rand > 0.5:
-            S[j] = -1 * S[j]
+            S[j] *= -1
 
         residue_2 = controller.residue(A, S)
 
@@ -43,16 +44,16 @@ def simulated_annealing(A, k):
         if abs(residue_2) > abs(residue_1):
             # take the worse residue by e() probability
             rand1 = random.uniform(0, 1)
-            if rand1 < eprob(i, residue_1, residue_2):
-                residue_1 = residue_2
+            if rand1 < e_prob(i, residue_1, residue_2):
+                smallest_residue = residue_2
 
         return smallest_residue
 
-#calculate eprob
+# calculate eprob
 
 
-def eprob(i, residue_1, residue_2):
-    temp = (10**10)*(.8)**math.floor(i/300)
+def e_prob(i, residue_1, residue_2):
+    temp = (10**10)*(.8**math.floor(i/300))
     temp_prob = math.exp(-1 * math.floor(residue_2 - residue_1)/temp)
     return temp_prob
 
