@@ -7,9 +7,6 @@
 # and returns the one with the smallest residue
 
 
-
-
-
 def repeated_random(A, k):
     import controller
     S = controller.generate_random_solution(len(A))
