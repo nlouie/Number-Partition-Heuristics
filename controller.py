@@ -10,7 +10,7 @@
 import Karmarkar_Karp
 import gradient_descent
 import repeated_random
-#import simulated_annealing
+import simulated_annealing
 
 # dependencies
 import random
@@ -53,8 +53,7 @@ def generate_random_solution(n):
 
 def main():
     # number of iterations of each heuristic
-    #k = 25000
-    k = 100
+    k = 25000
     # number of integers chosen uniformly from [1,10^12]
     n = 100
     # number of test cases
@@ -92,7 +91,6 @@ def main():
 
             gd_start_time = time.time()
             gd_out_a = gradient_descent.gradient_descent(A, k)
-            #gd_out = ''.join(str(e) for e in gd_out_a)
             gd_out = str(gd_out_a)
             gd_end_time = time.time()
             gd_exec_time = gd_end_time - gd_start_time
@@ -101,14 +99,13 @@ def main():
 
             # Simulated Annealing
 
-            # sa_start_time = time.time()
-            # sa_out_a = simulated_annealing.simulated_annealing(A, k)
-            # #sa_out = ''.join(str(e) for e in sa_out_a)
-            # sa_out = str(sa_out_a)
-            # sa_end_time = time.time()
-            # sa_exec_time = sa_end_time - sa_start_time
-            # f.write("Simulated Annealing Solution: " + sa_out +
-            #         "\nSimulated Annealing Exec Time: " + str(sa_exec_time) + "\n")
+            sa_start_time = time.time()
+            sa_out_a = simulated_annealing.simulated_annealing(A, k)
+            sa_out = str(sa_out_a)
+            sa_end_time = time.time()
+            sa_exec_time = sa_end_time - sa_start_time
+            f.write("Simulated Annealing Solution: " + sa_out +
+                    "\nSimulated Annealing Exec Time: " + str(sa_exec_time) + "\n")
 
             f.write("--------------------- End Test case " + str(i) + "-----------------------\n")
 
